@@ -16,7 +16,7 @@ enum EntryType {
 #[derive(Parser, Debug)]
 #[command(name = "findr")]
 #[command(version = "0.1.0")]
-#[command(about = "Rust uniq")]
+#[command(about = "Rust find")]
 #[command(author = "Radish-Miyazaki <y.hidaka.kobe@gmail.com>")]
 pub struct Args {
     #[arg(value_name = "PATH", default_value = "-", help = "Search paths")]
