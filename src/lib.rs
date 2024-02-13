@@ -19,7 +19,7 @@ enum EntryType {
 #[command(about = "Rust find")]
 #[command(author = "Radish-Miyazaki <y.hidaka.kobe@gmail.com>")]
 pub struct Args {
-    #[arg(value_name = "PATH", default_value = "-", help = "Search paths")]
+    #[arg(value_name = "PATH", default_value = ".", help = "Search paths")]
     path: Vec<String>,
     #[arg(short, long, help = "Name")]
     name: Vec<Regex>,
