@@ -4,7 +4,7 @@ use regex::Regex;
 type MyResult<T> = Result<T, Box<dyn std::error::Error>>;
 
 #[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, ValueEnum, Debug)]
-enum EntryType {
+enum Type {
     #[value(name = "f")]
     File,
     #[value(name = "d")]
@@ -21,8 +21,8 @@ enum EntryType {
 pub struct Args {
     #[arg(value_name = "PATH", default_value = ".", help = "Search paths")]
     path: Vec<String>,
-    #[arg(short, long, help = "Name")]
-    name: Vec<Regex>,
+    #[arg(value_name = "NAME", short, long = "name", help = "Name")]
+    names: Vec<Regex>,
     #[arg(
         value_name = "TYPE",
         short = 't',
@@ -30,7 +30,7 @@ pub struct Args {
         help = "Entry type",
         value_enum
     )]
-    entry_type: Vec<EntryType>,
+    types: Vec<Type>,
 }
 
 pub fn get_args() -> MyResult<Args> {
