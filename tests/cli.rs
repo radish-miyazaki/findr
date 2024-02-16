@@ -39,7 +39,7 @@ fn skips_bad_dir() -> TestResult {
 
 #[test]
 fn dies_bad_type() -> TestResult {
-    let expected = "error: invalid value 'x' for '--type <TYPE>'";
+    let expected = "error: invalid value 'x' for '--type <TYPE>...'";
     Command::cargo_bin(PRG)?
         .args(&["--type", "x"])
         .assert()
