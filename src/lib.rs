@@ -20,7 +20,7 @@ enum Type {
 #[command(author = "Radish-Miyazaki <y.hidaka.kobe@gmail.com>")]
 pub struct Args {
     #[arg(value_name = "PATH", default_value = ".", help = "Search paths")]
-    path: Vec<String>,
+    paths: Vec<String>,
     #[arg(value_name = "NAME", short, long = "name", help = "Name")]
     names: Vec<Regex>,
     #[arg(
